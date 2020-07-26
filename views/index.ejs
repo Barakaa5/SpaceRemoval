@@ -1,15 +1,25 @@
 <%- include('partials/header'); %>
 
 <div class="container">
-	<div class="mainApp">
-		<h2>Space Removal</h2>
-		<textarea id="myTextArea" class="block" rows="10" cols="100" value="asdasd"></textarea>
-		<div class="buttonArea">
-			<button onclick="myFunction()" id="btn" class="btn btn-success block">Fix Me!</button>
-		</div>
-		
-	</div>
-	
+    <div class="mainApp">
+        <div class="row">
+            <div class="col">
+                <h2>Space Removal</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <textarea dir="rtl" id="myTextArea" class="block" rows="10" cols="100"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col buttonArea">
+                <button onclick="myFunction()" id="btn" class="btn btn-success block">
+                    Delete Unnecessary Spaces
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -29,18 +39,21 @@ function myFunction(){
 	//Handle all space with this symbols: .,!?:
 	
 	//Handle all space with " symbol.
-	/*for(var i = 0; i <= textArray.length; i++ ){
-		if(textArray[i] == '"' && textArray[i+1] == " " && (textArray[i+2] != ' ' || textArray[i+2] != '')){
-			textArray[i+1] = ' ';
+	let first = false;
+	for(var i = 0; i <= textArray.length; i++ ){
+		if(textArray[i] == '"'){
+			first = !first;
+			if(first & textArray[i+1] == " "){
+				textArray[i+1] = "";
+			}
+			else if(textArray[i-1] == " "){
+				textArray[i-1] = "";
+			}	
 		}
-		if(textArray[i] == '"' && textArray[i-1] == ' ' ){
-			textArray[i-1] = "";
-		}
-	}	*/
+	}	
 	//Handle all space with " symbol.
 	
 	var finalText = textArray.join("");
-	console.log(finalText);
 	document.getElementById('myTextArea').value = finalText;
 }
 	

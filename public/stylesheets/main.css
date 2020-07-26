@@ -2,9 +2,14 @@ body {
     color: green;
 }
 
-h2 {
-	    padding: 10px;
+nav {
+	background-color: #000033 !important;
+}
 
+
+h2 {
+    padding: 10px;
+    margin: 0px;
 }
 
 .mainApp {
@@ -12,7 +17,26 @@ h2 {
     text-align: center;
     background: #ececec;
     box-shadow: 10px 9px 13px #aaaaaa;
+	    padding: 20px;
+
 }
 .buttonArea {
     padding: 10px;
+}
+
+textarea {
+    max-width: -webkit-fill-available;
+}
+
+
+#profile-img{
+	    width: 90px;
+    border-radius: 50%;
+
+}
+.navbar {
+	padding: 2px 16px;
+}
+.navbar-brand{
+	color: antiquewhite;
 }
